@@ -8,10 +8,24 @@
   },
   "about": {
     "title": "À propos",
-    "paragraph1": "Ingénieur d'assurance qualité passionné chez",
+    "paragraph1": "Software Test Engineer passionné chez",
     "companyName": "Rakuten France",
     "companyUrl": "#",
-    "paragraph1Rest": "diplômé d'un Master en Systèmes Embarqués. Je me spécialise dans la conception et l'implémentation de solutions de test automatisé pour les applications web end-to-end, API et mobile. J'ai dirigé plusieurs projets à fort impact, notamment la mise en place d'une infrastructure de dispositifs pour permettre l'exécution parallèle des tests, l'automatisation de la validation visuelle des interfaces utilisateur et le développement d'une plateforme SaaS locale de gestion des campagnes de test. Passionné par la technologie, j'explore activement des projets en systèmes embarqués pendant mon temps libre, restant connecté à mes racines académiques.",
+    "paragraph1Rest": "Diplômé d’un Master en Systèmes Embarqués, je conçois et déploie des solutions de test automatisé robustes pour des applications web end-to-end, API et mobiles. J’ai dirigé des projets stratégiques à fort impact, notamment la mise en place d’une infrastructure de dispositifs permettant l’exécution parallèle des tests, l’automatisation de la validation visuelle de element UI, ainsi que le développement d’une plateforme SaaS interne de gestion des campagnes de test. Ces initiatives ont permis d’améliorer significativement la fiabilité des livraisons et d’accélérer les cycles de mise en production. Animé par une forte culture technique, je développe en parallèle des projets personnels en systèmes embarqués, renforçant en continu ma maîtrise des systèmes bas niveau et mon approche d’ingénierie.",
     "paragraph2": "J'aime créer des outils et des systèmes qui rendent les tests plus efficaces, évolutifs et fiables, en mettant l'accent sur la création d'un impact réel."
-  }
+  },
+  "experience": {
+  "title": "Expérience",
+  "title2": "Stack technique",
+  "exps": [
+    {
+      "title": "Software Test Engineer / Release Manager",
+      "description": "Pilotage des initiatives d’automatisation des tests au sein de l’équipe Mobile et mise en place de stratégies de test complètes. Conception, développement et maintenance de frameworks de tests automatisés avec Selenium/Appium et Pytest. Maintien du planning de release et supervision de la santé des applications en production afin d’assurer stabilité et fiabilité. Refactorisation du projet d’automatisation pour permettre l’exécution parallèle sur plusieurs appareils et versions d’OS, réduisant le time-to-production de 80 % et limitant significativement les bugs en production."
+    },
+    {
+      "title": "Stagiaire Software Test Engineer",
+      "description": "Automatisation des tests pour les nouvelles fonctionnalités, maintenance de la base de tests existante et mise en place d’une validation visuelle des interfaces via des algorithmes de traitement d’image avec OpenCV. Participation à la conception et à l’exécution de plans de tests pour des applications web et mobiles, ainsi qu’à la réalisation de tests de régression, d’intégration et de performance sur plusieurs versions produit."
+    }
+  ]
+}
 }

@@ -2,34 +2,36 @@
 
 import { motion } from "framer-motion"
 import { ArrowUpRight } from "lucide-react"
+import { useTranslation } from "@/lib/hooks/useTranslation"
 
-const experiences = [
-  {
-    period: "2023 — Present",
-    title: "Software Test Engineer / Release Manager",
-    company: "Rakuten France",
-    companyUrl: "https://global.rakuten.com/corp/about/company/",
-    description:
-      "Led test automation initiatives in the Mobile Apps team and implemented comprehensive testing strategies. Designed, implemented, and maintained automated test frameworks using Selenium/Appium and Cypress. Maintained the release schedule and monitored application health in production to ensure stability and reliability. Refactored the automation testing project to enable parallel execution across multiple devices and OS versions, reducing time to production by 80% and significantly preventing production bugs.",
-    technologies: ["Selenium", "Appium", "Pytest", "Jenkins", "Github actions", "SQL", "Python", "Postman", "Bruno", "JIRA"],
-  },
-  {
-    period: "2023 — 2023",
-    title: "Software Test Engineer Intern",
-    company: "Rakuten France",
-    companyUrl: "https://global.rakuten.com/corp/about/company/",
-    description:
-      "Ensured the automation of tests for new features, maintained the existing test base, and implemented UI visual validation using image processing algorithms with OpenCV. I also developed and executed test plans for web and mobile applications, and performed regression, integration, and performance testing across multiple product releases.",
-    technologies: ["Selenium", "Appium", "Pytest", "Jenkins", "Github actions", "SQL", "Python", "Postman", "Bruno"],
-  }
-]
+
+
 
 export function Experience() {
+  const { t } = useTranslation()
+  const experiences = [
+    {
+      period: "2023 — Present",
+      title: t("experience.exps.0.title"),
+      company: "Rakuten France",
+      companyUrl: "https://global.rakuten.com/corp/about/company/",
+      description: t("experience.exps.0.description"),
+      technologies: ["Selenium", "Appium", "Pytest", "Jenkins", "Github actions", "SQL", "Python", "Postman", "Bruno", "JIRA"],
+    },
+    {
+      period: "2023 — 2023",
+      title: t("experience.exps.1.title"),
+      company: "Rakuten France",
+      companyUrl: "https://global.rakuten.com/corp/about/company/",
+      description: t("experience.exps.1.description"),
+      technologies: ["Selenium", "Appium", "Pytest", "Jenkins", "Github actions", "SQL", "Python", "Postman", "Bruno"],
+    }
+]
   return (
     <section
       id="experience"
       className="mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-      aria-label="Work experience"
+      aria-label={t("experience.title")}
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -39,7 +41,7 @@ export function Experience() {
         className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:mb-8 lg:bg-transparent lg:backdrop-blur-none"
       >
         <h2 className="text-lg font-bold uppercase tracking-widest text-foreground">
-          Experience
+          {t("experience.title")}
         </h2>
       </motion.div>
 
@@ -88,7 +90,7 @@ export function Experience() {
                   <p className="mt-2 text-sm leading-normal text-muted-foreground">
                     {experience.description}
                   </p>
-                  <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
+                  <ul className="mt-2 flex flex-wrap" aria-label={t("experience.title2")}>
                     {experience.technologies.map((tech) => (
                       <li key={tech} className="mr-1.5 mt-2">
                         <div className="flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-medium leading-5 text-primary">

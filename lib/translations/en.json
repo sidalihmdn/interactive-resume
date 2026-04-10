@@ -13,5 +13,19 @@
     "companyUrl": "#",
     "paragraph1Rest": "with a Master's degree in Embedded Systems Engineering. I specialize in designing and implementing automated testing solutions across web end-to-end, API, and mobile applications. I've led several impactful projects, including building a device pool to enable test parallelization, automating UI visual validation, and developing a local SaaS platform for test run management. A technology enthusiast, I actively explore embedded systems projects in my spare time, staying connected to my academic roots.",
     "paragraph2": "I enjoy building tools and systems that make testing more efficient, scalable, and reliable, with a strong focus on delivering real impact."
-  }
+  },
+  "experience": {
+    "title": "Experience",
+    "title2": "Technical Stack",
+    "exps" : [
+        {
+            "title": "Software Test Engineer",
+            "description": "Led test automation initiatives in the Mobile Apps team and implemented comprehensive testing strategies. Designed, implemented, and maintained automated test frameworks using Selenium/Appium and Pytest. Maintained the release schedule and monitored application health in production to ensure stability and reliability. Refactored the automation testing project to enable parallel execution across multiple devices and OS versions, reducing time to production by 80% and significantly preventing production bugs."
+        },
+        {
+            "title": "Software Test Engineer Intern",
+            "description": "Ensured the automation of tests for new features, maintained the existing test base, and implemented UI visual validation using image processing algorithms with OpenCV. I also developed and executed test plans for web and mobile applications, and performed regression, integration, and performance testing across multiple product releases."
+        }
+    ]
+   }
 }
