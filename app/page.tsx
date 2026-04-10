@@ -5,6 +5,7 @@ import { About } from "@/components/resume/about"
 import { Experience } from "@/components/resume/experience"
 import { Projects } from "@/components/resume/projects"
 import { Skills } from "@/components/resume/skills"
+import { Certifications } from "@/components/resume/certifications"
 import { Contact } from "@/components/resume/contact"
 import { Navigation } from "@/components/resume/navigation"
 
@@ -25,6 +26,7 @@ export default function ResumePage() {
             <Experience />
             <Projects />
             <Skills />
+            <Certifications />
             <Contact />
           </main>
         </div>

@@ -5,32 +5,23 @@ import { ArrowUpRight } from "lucide-react"
 
 const experiences = [
   {
-    period: "2022 — Present",
-    title: "Senior QA Engineer",
-    company: "Company Name",
+    period: "2023 — Present",
+    title: "Software Test Engineer / Release Manager",
+    company: "Rakuten France",
     companyUrl: "#",
     description:
-      "Lead test automation initiatives and implement comprehensive testing strategies. Design and maintain automated test frameworks using Selenium and Cypress. Collaborate with development teams to integrate testing into CI/CD pipelines, reducing production bugs by 40%.",
-    technologies: ["Selenium", "Cypress", "Jest", "Jenkins", "Python", "Postman"],
+      "Lead test automation initiatives in the Mobile Apps team and implement comprehensive testing strategies. Design, implement and maintain automated test frameworks using Selenium/Appium and Cypress. Collaborate with development teams to integrate testing into CI/CD pipelines, reducing production bugs by 40%.",
+    technologies: ["Selenium", "Appium", "Pytest", "Jenkins", "Github actions", "SQL", "Python", "Postman", "Bruno"],
   },
   {
-    period: "2020 — 2022",
-    title: "QA Engineer",
-    company: "Previous Company",
+    period: "2023 — 2023",
+    title: "Software Test Engineer Intern",
+    company: "Rakuten France",
     companyUrl: "#",
     description:
       "Developed and executed test plans for web and mobile applications. Created automated API tests using Postman and REST Assured. Performed regression, integration, and performance testing across multiple product releases.",
     technologies: ["Playwright", "REST Assured", "JMeter", "TestRail", "SQL"],
-  },
-  {
-    period: "2018 — 2020",
-    title: "Junior Test Engineer",
-    company: "Startup Inc",
-    companyUrl: "#",
-    description:
-      "Conducted manual testing for web applications, documenting test cases and bug reports. Participated in agile ceremonies and collaborated with developers to resolve issues. Introduced basic test automation using Selenium WebDriver.",
-    technologies: ["Selenium", "JIRA", "TestNG", "Java", "Git"],
-  },
+  }
 ]
 
 export function Experience() {
@@ -45,9 +36,9 @@ export function Experience() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0"
+        className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-background/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:mb-8 lg:bg-transparent lg:backdrop-blur-none"
       >
-        <h2 className="text-sm font-bold uppercase tracking-widest text-foreground lg:sr-only">
+        <h2 className="text-lg font-bold uppercase tracking-widest text-foreground">
           Experience
         </h2>
       </motion.div>

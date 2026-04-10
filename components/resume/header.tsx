@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail, Twitter, User } from "lucide-react"
 import Image from "next/image"
+import profileImg from "@/public/profile.png"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com", label: "GitHub" },
@@ -12,7 +13,7 @@ const socialLinks = [
 ]
 
 // Set to true when you add your photo to /public/profile.jpg
-const hasProfilePhoto = false
+const hasProfilePhoto = true;
 
 export function Header() {
   return (
@@ -26,7 +27,7 @@ export function Header() {
         <div className="relative h-40 w-40 overflow-hidden rounded-full border-2 border-border bg-secondary">
           {hasProfilePhoto ? (
             <Image
-              src="/profile.jpg"
+              src={profileImg}
               alt="Profile photo"
               fill
               className="object-cover"
@@ -47,7 +48,7 @@ export function Header() {
         className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl"
       >
         <a href="/" className="hover:text-primary transition-colors">
-          Your Name
+          Sid-Ali HAMDANE
         </a>
       </motion.h1>
       

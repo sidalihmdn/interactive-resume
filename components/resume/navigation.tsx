@@ -8,6 +8,7 @@ const navItems = [
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
+  { id: "certifications", label: "Certifications" },
   { id: "contact", label: "Contact" },
 ]
 
@@ -23,7 +24,7 @@ export function Navigation() {
           }
         })
       },
-      { rootMargin: "-50% 0px -50% 0px" }
+      { rootMargin: "0px 0px -70% 0px" }
     )
 
     navItems.forEach((item) => {
