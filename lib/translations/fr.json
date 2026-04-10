@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "title": "Contact",
+    "heading": "Travaillons ensemble",
+    "description": "Je suis toujours intéressé par les nouveaux projets et opportunités. Que vous ayez une question ou simplement envie de dire bonjour, n'hésitez pas à me contacter !",
+    "email": "hamdane.sidali@hotmail.com",
+    "location": "Paris, FR"
+  },
+  "about": {
+    "title": "À propos",
+    "paragraph1": "Ingénieur d'assurance qualité passionné chez",
+    "companyName": "Rakuten France",
+    "companyUrl": "#",
+    "paragraph1Rest": "diplômé d'un Master en Systèmes Embarqués. Je me spécialise dans la conception et l'implémentation de solutions de test automatisé pour les applications web end-to-end, API et mobile. J'ai dirigé plusieurs projets à fort impact, notamment la mise en place d'une infrastructure de dispositifs pour permettre l'exécution parallèle des tests, l'automatisation de la validation visuelle des interfaces utilisateur et le développement d'une plateforme SaaS locale de gestion des campagnes de test. Passionné par la technologie, j'explore activement des projets en systèmes embarqués pendant mon temps libre, restant connecté à mes racines académiques.",
+    "paragraph2": "J'aime créer des outils et des systèmes qui rendent les tests plus efficaces, évolutifs et fiables, en mettant l'accent sur la création d'un impact réel."
+  }
+}

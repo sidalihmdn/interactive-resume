@@ -13,7 +13,7 @@ const skillCategories = [
   },
   {
     title: "Tools & Platforms",
-    skills: ["Jenkins", "GitHub Actions", "Docker", "Postman", "Bruno", "Charles proxy", "Docker", "Kubernetes", "Grafana", "Metabase"],
+    skills: ["Jenkins", "GitHub Actions", "Docker", "Postman", "Bruno", "Charles proxy", "Kubernetes", "Grafana", "Metabase"],
   },
   {
     title: "Testing Types",

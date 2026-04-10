@@ -6,12 +6,18 @@ import { Experience } from "@/components/resume/experience"
 import { Projects } from "@/components/resume/projects"
 import { Skills } from "@/components/resume/skills"
 import { Certifications } from "@/components/resume/certifications"
-import { Contact } from "@/components/resume/contact"
+import { Contact } from "@/components/resume/contact-translated"
 import { Navigation } from "@/components/resume/navigation"
+import { LanguageSwitcher } from "@/components/LanguageSwitcher"
 
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-background">
+      {/* Language Switcher at Top Center */}
+      <div className="flex justify-center pt-6 lg:pt-8">
+        <LanguageSwitcher />
+      </div>
+      
       <div className="mx-auto max-w-6xl px-6 py-12 lg:py-24 lg:px-12">
         <div className="lg:flex lg:justify-between lg:gap-16">
           {/* Left Column - Sticky Header & Navigation */}

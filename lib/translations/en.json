@@ -1,0 +1,17 @@
+{
+  "contact": {
+    "title": "Contact",
+    "heading": "Let's work together",
+    "description": "I'm always interested in hearing about new projects and opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
+    "email": "hamdane.sidali@hotmail.com",
+    "location": "Paris, FR"
+  },
+  "about": {
+    "title": "About",
+    "paragraph1": "Passionate Software Test Engineer at",
+    "companyName": "Rakuten France",
+    "companyUrl": "#",
+    "paragraph1Rest": "with a Master's degree in Embedded Systems Engineering. I specialize in designing and implementing automated testing solutions across web end-to-end, API, and mobile applications. I've led several impactful projects, including building a device pool to enable test parallelization, automating UI visual validation, and developing a local SaaS platform for test run management. A technology enthusiast, I actively explore embedded systems projects in my spare time, staying connected to my academic roots.",
+    "paragraph2": "I enjoy building tools and systems that make testing more efficient, scalable, and reliable, with a strong focus on delivering real impact."
+  }
+}
