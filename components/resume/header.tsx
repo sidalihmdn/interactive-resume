@@ -6,10 +6,9 @@ import Image from "next/image"
 import profileImg from "@/public/profile.png"
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
+  { icon: Github, href: "https://github.com/sidalihmdn", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/sidali-hamdane", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:hamdane.sidali@hotmail.com", label: "Email" },
 ]
 
 // Set to true when you add your photo to /public/profile.jpg
@@ -67,7 +66,7 @@ export function Header() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="mt-4 max-w-xs text-muted-foreground leading-relaxed"
       >
-        I ensure software quality through comprehensive testing strategies and automation.
+        Software Test Engineer & Release Manager at Rakuten France.
       </motion.p>
 
       <motion.ul

@@ -8,19 +8,19 @@ const experiences = [
     period: "2023 — Present",
     title: "Software Test Engineer / Release Manager",
     company: "Rakuten France",
-    companyUrl: "#",
+    companyUrl: "https://global.rakuten.com/corp/about/company/",
     description:
-      "Lead test automation initiatives in the Mobile Apps team and implement comprehensive testing strategies. Design, implement and maintain automated test frameworks using Selenium/Appium and Cypress. Collaborate with development teams to integrate testing into CI/CD pipelines, reducing production bugs by 40%.",
-    technologies: ["Selenium", "Appium", "Pytest", "Jenkins", "Github actions", "SQL", "Python", "Postman", "Bruno"],
+      "Led test automation initiatives in the Mobile Apps team and implemented comprehensive testing strategies. Designed, implemented, and maintained automated test frameworks using Selenium/Appium and Cypress. Maintained the release schedule and monitored application health in production to ensure stability and reliability. Refactored the automation testing project to enable parallel execution across multiple devices and OS versions, reducing time to production by 80% and significantly preventing production bugs.",
+    technologies: ["Selenium", "Appium", "Pytest", "Jenkins", "Github actions", "SQL", "Python", "Postman", "Bruno", "JIRA"],
   },
   {
     period: "2023 — 2023",
     title: "Software Test Engineer Intern",
     company: "Rakuten France",
-    companyUrl: "#",
+    companyUrl: "https://global.rakuten.com/corp/about/company/",
     description:
-      "Developed and executed test plans for web and mobile applications. Created automated API tests using Postman and REST Assured. Performed regression, integration, and performance testing across multiple product releases.",
-    technologies: ["Playwright", "REST Assured", "JMeter", "TestRail", "SQL"],
+      "Ensured the automation of tests for new features, maintained the existing test base, and implemented UI visual validation using image processing algorithms with OpenCV. I also developed and executed test plans for web and mobile applications, and performed regression, integration, and performance testing across multiple product releases.",
+    technologies: ["Selenium", "Appium", "Pytest", "Jenkins", "Github actions", "SQL", "Python", "Postman", "Bruno"],
   }
 ]
 
@@ -102,30 +102,6 @@ export function Experience() {
             </motion.li>
           ))}
         </ol>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-12"
-        >
-          <a
-            className="inline-flex items-baseline font-medium leading-tight text-foreground hover:text-primary focus-visible:text-primary group/link text-base"
-            href="/resume.pdf"
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label="View Full Résumé (opens in a new tab)"
-          >
-            <span>
-              View Full{" "}
-              <span className="inline-block">
-                Résumé
-                <ArrowUpRight className="inline-block h-4 w-4 shrink-0 transition-transform group-hover/link:-translate-y-1 group-hover/link:translate-x-1 group-focus-visible/link:-translate-y-1 group-focus-visible/link:translate-x-1 motion-reduce:transition-none ml-1 translate-y-px" />
-              </span>
-            </span>
-          </a>
-        </motion.div>
       </div>
     </section>
   )

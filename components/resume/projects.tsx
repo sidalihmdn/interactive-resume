@@ -5,33 +5,23 @@ import { ArrowUpRight, ExternalLink, Github } from "lucide-react"
 
 const projects = [
   {
-    title: "Test Automation Framework",
+    title: "Test Manager SaaS Platform",
     description:
-      "A scalable, modular test automation framework built with Page Object Model design pattern. Supports parallel execution across multiple browsers and integrates with CI/CD pipelines for continuous testing.",
-    technologies: ["Cypress", "TypeScript", "GitHub Actions", "Docker"],
+      "Developing a test management SaaS platform that enables teams to create and manage test scenarios using Gherkin for feature-based testing. The tool supports organizing and executing test runs and test campaigns, helping streamline test planning and tracking. Built with a Python backend and a React frontend, the project is currently a work in progress.",
+    technologies: ["Python", "React", "GitHub Actions", "Docker"],
     links: {
       live: "#",
-      github: "#",
+      github: "https://github.com/sidalihmdn/TestBase",
     },
   },
   {
-    title: "API Testing Suite",
+    title: "OS Kernel - Pet Project",
     description:
-      "Comprehensive API testing solution with automated contract testing, data validation, and performance benchmarking. Includes detailed reporting and integration with Slack for real-time notifications.",
-    technologies: ["Postman", "Newman", "Python", "pytest"],
+      "Developing a Linux-like kernel in C and C++, focusing on low-level system design and operating system fundamentals. Implemented core components such as memory management and hardware drivers, and currently working on the filesystem. This project is inspired by the educational work of Tanenbaum on Minix as well as concepts and architecture from the Linux kernel.",
+    technologies: ["C", "C++", "Assembly", "QEMU"],
     links: {
+      github: "https://github.com/sidalihmdn/OS_from_scratch",
       live: "#",
-      github: "#",
-    },
-  },
-  {
-    title: "Performance Testing Dashboard",
-    description:
-      "Real-time performance monitoring dashboard that visualizes load test results, identifies bottlenecks, and tracks performance metrics over time across multiple environments.",
-    technologies: ["JMeter", "Grafana", "InfluxDB", "Python"],
-    links: {
-      live: "#",
-      github: "#",
     },
   },
 ]
@@ -73,7 +63,7 @@ export function Projects() {
                   <h3>
                     <a
                       className="inline-flex items-baseline font-medium leading-tight text-foreground hover:text-primary focus-visible:text-primary group/link text-base"
-                      href={project.links.live}
+                      href={project.links.github}
                       target="_blank"
                       rel="noreferrer noopener"
                       aria-label={`${project.title} (opens in a new tab)`}
@@ -90,15 +80,17 @@ export function Projects() {
                   </p>
 
                   <div className="mt-3 flex items-center gap-4">
-                    <a
+                    {project.links.live && project.links.live !== "#" && (
+                      <a
                       href={project.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="relative z-10 text-muted-foreground hover:text-foreground transition-colors"
                       aria-label="Live demo"
-                    >
+                      >
                       <ExternalLink className="h-4 w-4" />
-                    </a>
+                      </a>
+                    )}
                     <a
                       href={project.links.github}
                       target="_blank"

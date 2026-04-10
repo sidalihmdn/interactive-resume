@@ -56,44 +56,7 @@ export function Contact() {
         </div>
       </motion.div>
 
-      <motion.footer
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="mt-16 text-sm text-muted-foreground"
-      >
-        <p>
-          Built with{" "}
-          <a
-            href="https://nextjs.org"
-            className="font-medium text-foreground hover:text-primary transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Next.js
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://tailwindcss.com"
-            className="font-medium text-foreground hover:text-primary transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tailwind CSS
-          </a>
-          , deployed with{" "}
-          <a
-            href="https://pages.github.com"
-            className="font-medium text-foreground hover:text-primary transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub Pages
-          </a>
-          .
-        </p>
-      </motion.footer>
+      
     </section>
   )
 }
