@@ -5,6 +5,16 @@ import { ArrowUpRight, ExternalLink, Github } from "lucide-react"
 
 const projects = [
   {
+    title: "lashtest - API Testing Library",
+    description:
+      "A Python library for writing expressive, readable API tests. Built around a fluent builder API for constructing HTTP requests and chaining rich assertions on status codes, JSON bodies, JSONPath expressions, headers, cookies, and XML with XPath. Features built-in Allure reporting integration, multiple auth strategies (Bearer, Basic, API Key), retry with exponential backoff, fake test data generation, and a CLI runner. Actively developed with a growing assertion DSL and XML/SOAP support.",
+    technologies: ["Python", "pytest", "Allure", "lxml", "JSONPath"],
+    links: {
+      github: "https://github.com/sidalihmdn/lashtest",
+      live: "https://pypi.org/project/lashtest/",
+    },
+  },
+  {
     title: "Test Manager SaaS Platform",
     description:
       "Developing a test management SaaS platform that enables teams to create and manage test scenarios using Gherkin for feature-based testing. The tool supports organizing and executing test runs and test campaigns, helping streamline test planning and tracking. Built with a Python backend and a React frontend, the project is currently a work in progress.",
