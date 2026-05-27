@@ -31,7 +31,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-            pnpm config set allow-scripts true
             pnpm install
 
       - name: Build
