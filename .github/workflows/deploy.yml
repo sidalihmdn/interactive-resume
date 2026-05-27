@@ -30,8 +30,9 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm config set allow-scripts true
-        run: pnpm install
+        run: |
+            pnpm config set allow-scripts true
+            pnpm install
 
       - name: Build
         run: pnpm build
