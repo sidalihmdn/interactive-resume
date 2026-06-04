@@ -6,7 +6,7 @@ export default function VisitorCounter() {
 
   useEffect(() => {
     fetch(
-      'https://berkukes.goatcounter.com/counter/TOTAL.json'
+      'https://berkukes.goatcounter.com/counter//interactive-resume.json'
     )
       .then((res) => res.json())
       .then((data) => setViews(data.count))
