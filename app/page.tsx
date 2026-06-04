@@ -31,8 +31,8 @@ export default function ResumePage() {
             <About />
             <Experience />
             <Projects />
-            <Skills />
             <Certifications />
+            <Skills />
             <Contact />
           </main>
         </div>

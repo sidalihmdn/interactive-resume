@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
 import { LanguageProvider } from '@/lib/context/LanguageContext'
 import './globals.css'
+import Script from 'next/script'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
@@ -40,7 +40,8 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <LanguageProvider>
           {children}
-          {process.env.NODE_ENV === 'production' && <Analytics />}
+          <script data-goatcounter="https://berkukes.goatcounter.com/count"
+                  async src="//gc.zgo.at/count.js"></script>
         </LanguageProvider>
       </body>
     </html>
