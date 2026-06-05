@@ -14,16 +14,23 @@ export const metadata: Metadata = {
   generator: 'ME',
   icons: {
     icon: [
-      {
-        url: '/S-48.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/S-48.png',
-        media: '(prefers-color-scheme: dark)',
-      }
+     {
+      url: '/S-48.png',
+      sizes: '48x48',
+      type: 'image/png',
+     },
+     {
+      url: '/S-32.png',
+      sizes: '32x32',
+      type: 'image/png',
+     },
+     {
+      url: '/S-120.png',
+      sizes: '120x120',
+      type: 'image/png',
+     },
     ],
-    apple: '/S-120.png',
+    apple: '/S-180.png',
   },
 }
 
