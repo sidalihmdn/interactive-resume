@@ -15,22 +15,22 @@ export const metadata: Metadata = {
   icons: {
     icon: [
      {
-      url: '/S-48.png',
+      url: '/interactive-resume/S-48.png',
       sizes: '48x48',
       type: 'image/png',
      },
      {
-      url: '/S-32.png',
+      url: '/interactive-resume/S-32.png',
       sizes: '32x32',
       type: 'image/png',
      },
      {
-      url: '/S-120.png',
+      url: '/interactive-resume/S-120.png',
       sizes: '120x120',
       type: 'image/png',
      },
     ],
-    apple: '/S-180.png',
+    apple: '/interactive-resume/lohS-180.png',
   },
 }
 
