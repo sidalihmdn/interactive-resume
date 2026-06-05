@@ -45,6 +45,20 @@ export default function RootLayout({
           <script data-goatcounter="https://berkukes.goatcounter.com/count"
                   async src="//gc.zgo.at/count.js"></script>
         </LanguageProvider>
+        <Script
+          id="schema-person"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Sid-Ali HAMDANE",
+              url: "https://sidalihmdn.github.io",
+              image: "https://sidalihmdn.github.io/IMG_4844.png",
+              jobTitle: "Software Test Engineer",
+            }),
+          }}
+        />
       </body>
     </html>
   )
