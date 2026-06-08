@@ -56,8 +56,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Sid-Ali HAMDANE",
-              url: "https://sidalihmdn.github.io",
-              image: "https://sidalihmdn.github.io/IMG_4844.png",
+              url: "https://sidalihmdn.github.io/interactive-resume/",
+              image: "https://sidalihmdn.github.io/interactive-resume/S-48.png",
               jobTitle: "Software Test Engineer",
             }),
           }}
