@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Award } from "lucide-react"
+import { Award, ExternalLink } from "lucide-react"
 
 const certifications = [
   {
@@ -10,6 +10,7 @@ const certifications = [
     issuer: "ISTQB — International Software Testing Qualifications Board",
     description:
       "Advanced certification covering test automation architecture, frameworks, and best practices for designing, implementing, and maintaining automated test solutions.",
+    link: "https://app.skillsclub.com/credential/263711-3f34ad1e6b705ad027c1e28a29024a0242d62e74573da8546340285f9af220e6?locale=en",
   },
   {
     year: "2024",
@@ -17,8 +18,13 @@ const certifications = [
     issuer: "ISTQB — International Software Testing Qualifications Board",
     description:
       "Foundation certification validating core software testing knowledge including testing principles, test management, and test techniques.",
+    link: "https://app.skillsclub.com/credential/77521-770788ec0faef03c55eb02df7a9307b48fca5adccae179c48b104f81f2e45280?locale=en",
   },
 ]
+
+const openCertificateLink = (url: string) => {
+  window.open(url, "certificate", "width=800,height=600,resizable=yes,scrollbars=yes")
+}
 
 export function Certifications() {
   return (
@@ -49,7 +55,7 @@ export function Certifications() {
             viewport={{ once: true }}
             className="mb-12"
           >
-            <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+            <div className="group relative grid pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50 cursor-pointer" onClick={() => openCertificateLink(cert.link)}>
               <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-secondary/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
 
               <header
@@ -60,9 +66,10 @@ export function Certifications() {
               </header>
 
               <div className="z-10 sm:col-span-6">
-                <h3 className="flex items-center gap-2 font-medium leading-snug text-foreground">
+                <h3 className="flex items-center gap-2 font-medium leading-snug text-foreground group-hover:text-primary transition-colors">
                   <Award className="h-4 w-4 shrink-0 text-primary" />
                   {cert.title}
+                  <ExternalLink className="h-4 w-4 shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </h3>
                 <p className="mt-1 text-xs font-medium text-primary">
                   {cert.issuer}

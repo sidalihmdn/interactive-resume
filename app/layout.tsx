@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { LanguageProvider } from '@/lib/context/LanguageContext'
-import  VisitorCounter from '@/components/VisitorCounter'
+import VisitorCounter from '@/components/VisitorCounter'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import './globals.css'
 import Script from 'next/script'
 
@@ -44,6 +45,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <VisitorCounter></VisitorCounter>
         <LanguageProvider>
+          <LanguageSwitcher />
           {children}
           <script data-goatcounter="https://berkukes.goatcounter.com/count"
                   async src="//gc.zgo.at/count.js"></script>
