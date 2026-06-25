@@ -27,5 +27,23 @@
             "description": "Ensured the automation of tests for new features, maintained the existing test base, and implemented UI visual validation using image processing algorithms with OpenCV. I also developed and executed test plans for web and mobile applications, and performed regression, integration, and performance testing across multiple product releases."
         }
     ]
+  },
+  "hero": {
+    "eyebrow": "Interactive Resume",
+    "title": "Software Test Engineer",
+    "subtitle": "Release Manager · Rakuten France",
+    "bookMeeting": "Book Meeting",
+    "scroll": "Scroll"
+  },
+  "navigation": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "certifications": "Certifications",
+    "skills": "Skills",
+    "contact": "Contact",
+    "progress": "Progress",
+    "sectionProgressRail": "Section progress rail",
+    "mobileSectionNavigation": "Mobile section navigation"
    }
 }

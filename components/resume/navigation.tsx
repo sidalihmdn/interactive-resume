@@ -2,17 +2,19 @@
 
 import { motion } from "framer-motion"
 import { useEffect, useState } from "react"
-
-const navItems = [
-  { id: "about", label: "About" },
-  { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
-  { id: "certifications", label: "Certifications" },
-  { id: "skills", label: "Skills" },
-  { id: "contact", label: "Contact" },
-]
+import { useTranslation } from "@/lib/hooks/useTranslation"
 
 export function Navigation() {
+  const { t } = useTranslation()
+  const navItems = [
+    { id: "about", label: t("navigation.about") },
+    { id: "experience", label: t("navigation.experience") },
+    { id: "projects", label: t("navigation.projects") },
+    { id: "certifications", label: t("navigation.certifications") },
+    { id: "skills", label: t("navigation.skills") },
+    { id: "contact", label: t("navigation.contact") },
+  ]
+
   const [activeSection, setActiveSection] = useState("about")
   const [scrollProgress, setScrollProgress] = useState(0)
   const [showHelper, setShowHelper] = useState(false)
@@ -66,7 +68,7 @@ export function Navigation() {
         className={`fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 transition-opacity duration-300 lg:block ${
           showHelper ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
-        aria-label="Section progress rail"
+        aria-label={t("navigation.sectionProgressRail")}
       >
         <motion.div
           initial={{ opacity: 0, x: 16 }}
@@ -75,7 +77,7 @@ export function Navigation() {
           className="w-48 rounded-2xl border border-border/60 bg-background/75 p-3 shadow-xl backdrop-blur-md"
         >
           <div className="mb-3">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Progress</p>
+            <p className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">{t("navigation.progress")}</p>
             <div className="mt-2 h-1.5 rounded-full bg-secondary">
               <motion.div
                 className="h-full rounded-full bg-primary"
@@ -109,7 +111,7 @@ export function Navigation() {
         className={`fixed bottom-3 left-1/2 z-40 w-[min(94%,520px)] -translate-x-1/2 rounded-2xl border border-border/40 bg-background/70 px-2 py-1.5 shadow-lg backdrop-blur-md transition-opacity duration-300 lg:hidden ${
           showHelper ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
-        aria-label="Mobile section navigation"
+        aria-label={t("navigation.mobileSectionNavigation")}
       >
         <div className="mb-1.5 h-0.5 w-full overflow-hidden rounded-full bg-secondary/70">
           <motion.div className="h-full rounded-full bg-primary/85" style={{ width: `${scrollProgress}%` }} />

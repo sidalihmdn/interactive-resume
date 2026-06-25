@@ -5,6 +5,7 @@ import { ChevronDown, Github, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
 import profileImg from "@/public/profile.png"
 import { useEffect, useState } from "react"
+import { useTranslation } from "@/lib/hooks/useTranslation"
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/sidalihmdn", label: "GitHub" },
@@ -12,7 +13,18 @@ const socialLinks = [
   { icon: Mail, href: "mailto:hamdane.sidali@hotmail.com", label: "Email" },
 ]
 
+const floatingDots = [
+  { left: "8%", top: "18%", size: "h-2 w-2", delay: 0, duration: 9 },
+  { left: "24%", top: "72%", size: "h-1.5 w-1.5", delay: 0.8, duration: 11 },
+  { left: "38%", top: "32%", size: "h-2.5 w-2.5", delay: 0.4, duration: 13 },
+  { left: "52%", top: "60%", size: "h-1.5 w-1.5", delay: 1.1, duration: 10 },
+  { left: "64%", top: "24%", size: "h-2 w-2", delay: 0.3, duration: 12 },
+  { left: "78%", top: "75%", size: "h-1.5 w-1.5", delay: 1.4, duration: 9.5 },
+  { left: "88%", top: "42%", size: "h-2.5 w-2.5", delay: 0.9, duration: 14 },
+]
+
 export function HeroLanding() {
+  const { t } = useTranslation()
   const { scrollY } = useScroll()
   const [vh, setVh] = useState(800)
 
@@ -69,6 +81,38 @@ export function HeroLanding() {
           style={{ y: orb3Y }}
           className="absolute left-[55%] top-[10%] h-[200px] w-[200px] rounded-full bg-[oklch(0.7_0.14_200)]/4 blur-[70px] pointer-events-none"
         />
+
+        {/* Floating micro particles */}
+        {floatingDots.map((dot, index) => (
+          <motion.div
+            key={index}
+            className={`pointer-events-none absolute rounded-full bg-primary/40 ${dot.size}`}
+            style={{ left: dot.left, top: dot.top }}
+            animate={{
+              y: [0, -18, 0],
+              opacity: [0.15, 0.7, 0.15],
+              scale: [1, 1.18, 1],
+            }}
+            transition={{
+              duration: dot.duration,
+              delay: dot.delay,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        ))}
+
+        {/* Slow rotating halo rings */}
+        <motion.div
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[640px] w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/10"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary/8"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 38, repeat: Infinity, ease: "linear" }}
+        />
       </div>
 
       {/* ── Foreground content ── */}
@@ -103,7 +147,7 @@ export function HeroLanding() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="mb-8 text-xs font-medium uppercase tracking-[0.45em] text-primary"
         >
-          Interactive Resume
+          {t("hero.eyebrow")}
         </motion.p>
 
         {/* Name */}
@@ -133,7 +177,7 @@ export function HeroLanding() {
           transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
           className="mt-7 text-lg font-medium uppercase tracking-widest text-muted-foreground"
         >
-          Software Test Engineer
+          {t("hero.title")}
         </motion.p>
 
         {/* Subtitle */}
@@ -143,15 +187,28 @@ export function HeroLanding() {
           transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="mt-4 max-w-xs text-sm text-muted-foreground/70 leading-relaxed"
         >
-          Release Manager · Rakuten France
+          {t("hero.subtitle")}
         </motion.p>
+
+        {/* Book meeting CTA */}
+        <motion.a
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
+          href="https://calendly.com/hamdane-sidali/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-7 inline-flex items-center justify-center rounded-full border border-primary/60 bg-primary/15 px-6 py-2.5 text-sm font-semibold uppercase tracking-[0.18em] text-primary transition-all duration-200 hover:bg-primary/25 hover:shadow-[0_0_24px_hsl(var(--primary)/0.35)]"
+        >
+          {t("hero.bookMeeting")}
+        </motion.a>
 
         {/* Social links */}
         <motion.ul
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.75, ease: "easeOut" }}
-          className="mt-8 flex items-center gap-6"
+          transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+          className="mt-7 flex items-center gap-6"
           aria-label="Social media"
         >
           {socialLinks.map((social) => (
@@ -176,7 +233,7 @@ export function HeroLanding() {
         className="absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
       >
         <span className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground/60">
-          Scroll
+          {t("hero.scroll")}
         </span>
         <motion.div
           animate={{ y: [0, 7, 0] }}
