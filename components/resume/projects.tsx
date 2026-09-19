@@ -61,17 +61,17 @@ const projects: Project[] = [
     },
   },
   {
-    title: "Test Manager SaaS Platform",
+    title: "Lashtest Lab - Test Manager SaaS",
     description:
       "A platform to manage Gherkin test scenarios, runs, and campaigns with a Python backend and React frontend.",
     technologies: ["Python", "React", "GitHub Actions", "Docker"],
     links: {
-      live: "#",
+      live: "https://www.lashtest.com/",
       github: "https://github.com/sidalihmdn/TestBase",
     },
     preview: {
-      thumbnail: "/placeholder.jpg",
-      video: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+      thumbnail: "/lashtest-lab.png",
+      video: "/lashtest-lab.mov",
     },
     caseStudy: {
       problem: "Teams lacked one place to manage scenario authoring, run planning, and campaign tracking.",
