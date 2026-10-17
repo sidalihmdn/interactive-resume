@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -20,9 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v3
-        with:
-          version: latest
+      - uses: pnpm/action-setup@v4
 
       - uses: actions/setup-node@v4
         with:
@@ -30,11 +29,16 @@ jobs:
           cache: pnpm
 
       - name: Install dependencies
-        run: |
-            pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm build
+
+      # The "Download CV" buttons point at these PDFs, printed from the site itself.
+      - name: Generate CV PDFs
+        run: |
+          (cd e2e && npm install --no-audit --no-fund && npx playwright install --with-deps chromium)
+          node scripts/generate-cv.mjs
 
       - uses: actions/upload-pages-artifact@v3
         with:
