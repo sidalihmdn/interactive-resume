@@ -129,7 +129,7 @@ export function HeroLanding() {
         >
           {/* Glowing ring behind the photo */}
           <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl scale-110 pointer-events-none" />
-          <div className="relative h-28 w-28 overflow-hidden rounded-full border border-primary/30 ring-2 ring-primary/10 ring-offset-2 ring-offset-background">
+          <div className="relative h-40 w-40 sm:h-28 sm:w-28 overflow-hidden rounded-full border border-primary/30 ring-2 ring-primary/10 ring-offset-2 ring-offset-background">
             <Image
               src={profileImg}
               alt="Sid-Ali Hamdane"
