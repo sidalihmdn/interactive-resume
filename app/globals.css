@@ -1,82 +1,66 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@custom-variant dark (&:is(.dark *));
+/* Theme switching is class-based (next-themes puts .dark on <html>). */
+@custom-variant dark (&:where(.dark, .dark *));
 
+/* Light: cool paper, deep slate ink, teal for "passed". */
 :root {
-  --background: oklch(0.16 0.014 240);
-  --foreground: oklch(0.93 0.01 240);
-  --card: oklch(0.18 0.014 240);
-  --card-foreground: oklch(0.93 0.01 240);
-  --popover: oklch(0.18 0.014 240);
-  --popover-foreground: oklch(0.93 0.01 240);
-  --primary: oklch(0.75 0.12 180);
-  --primary-foreground: oklch(0.16 0.014 240);
-  --secondary: oklch(0.22 0.014 240);
-  --secondary-foreground: oklch(0.93 0.01 240);
-  --muted: oklch(0.22 0.014 240);
-  --muted-foreground: oklch(0.6 0.02 240);
-  --accent: oklch(0.75 0.12 180);
-  --accent-foreground: oklch(0.16 0.014 240);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.28 0.014 240);
-  --input: oklch(0.22 0.014 240);
-  --ring: oklch(0.75 0.12 180);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.14 0.014 240);
-  --sidebar-foreground: oklch(0.93 0.01 240);
-  --sidebar-primary: oklch(0.75 0.12 180);
-  --sidebar-primary-foreground: oklch(0.16 0.014 240);
-  --sidebar-accent: oklch(0.22 0.014 240);
-  --sidebar-accent-foreground: oklch(0.93 0.01 240);
-  --sidebar-border: oklch(0.28 0.014 240);
-  --sidebar-ring: oklch(0.75 0.12 180);
+  --background: #f4f7f8;
+  --foreground: #0e2230;
+  --card: #ffffff;
+  --card-foreground: #0e2230;
+  --popover: #ffffff;
+  --popover-foreground: #0e2230;
+  --primary: #0d7c70;
+  --primary-foreground: #ffffff;
+  --secondary: #e6edef;
+  --secondary-foreground: #0e2230;
+  --muted: #e6edef;
+  --muted-foreground: #4f6470;
+  --accent: #0d7c70;
+  --accent-foreground: #ffffff;
+  --destructive: #b42318;
+  --border: #d3dde1;
+  --input: #d3dde1;
+  --ring: #0d7c70;
+  /* The terminal panel stays dark in both themes, like a real terminal. */
+  --terminal: #0f1a22;
+  --terminal-foreground: #d7e3e8;
+  --terminal-muted: #7f939e;
+  --terminal-pass: #4fd1bd;
+  --radius: 0.75rem;
 }
 
+/* Dark: the original slate + teal identity. */
 .dark {
   --background: oklch(0.16 0.014 240);
   --foreground: oklch(0.93 0.01 240);
-  --card: oklch(0.18 0.014 240);
+  --card: oklch(0.19 0.014 240);
   --card-foreground: oklch(0.93 0.01 240);
-  --popover: oklch(0.18 0.014 240);
+  --popover: oklch(0.19 0.014 240);
   --popover-foreground: oklch(0.93 0.01 240);
   --primary: oklch(0.75 0.12 180);
   --primary-foreground: oklch(0.16 0.014 240);
   --secondary: oklch(0.22 0.014 240);
   --secondary-foreground: oklch(0.93 0.01 240);
   --muted: oklch(0.22 0.014 240);
-  --muted-foreground: oklch(0.6 0.02 240);
+  --muted-foreground: oklch(0.68 0.02 240);
   --accent: oklch(0.75 0.12 180);
   --accent-foreground: oklch(0.16 0.014 240);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --destructive: oklch(0.637 0.237 25.331);
   --border: oklch(0.28 0.014 240);
-  --input: oklch(0.22 0.014 240);
+  --input: oklch(0.28 0.014 240);
   --ring: oklch(0.75 0.12 180);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.14 0.014 240);
-  --sidebar-foreground: oklch(0.93 0.01 240);
-  --sidebar-primary: oklch(0.75 0.12 180);
-  --sidebar-primary-foreground: oklch(0.16 0.014 240);
-  --sidebar-accent: oklch(0.22 0.014 240);
-  --sidebar-accent-foreground: oklch(0.93 0.01 240);
-  --sidebar-border: oklch(0.28 0.014 240);
-  --sidebar-ring: oklch(0.75 0.12 180);
+  --terminal: oklch(0.12 0.014 240);
+  --terminal-foreground: oklch(0.9 0.01 240);
+  --terminal-muted: oklch(0.62 0.02 240);
+  --terminal-pass: oklch(0.78 0.13 180);
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -92,34 +76,78 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
+  --color-terminal: var(--terminal);
+  --color-terminal-foreground: var(--terminal-foreground);
+  --color-terminal-muted: var(--terminal-muted);
+  --color-terminal-pass: var(--terminal-pass);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+    /* Leave room for the sticky header when jumping to a section. */
+    scroll-padding-top: 5rem;
+  }
   body {
     @apply bg-background text-foreground;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print view doubles as the downloadable CV (see scripts/generate-cv.mjs). */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 14mm 16mm;
+  }
+  :root,
+  .dark {
+    --background: #ffffff;
+    --foreground: #111827;
+    --card: #ffffff;
+    --muted-foreground: #374151;
+    --primary: #0d6b61;
+    --border: #d1d5db;
+    --secondary: #f3f4f6;
+  }
+  html {
+    font-size: 12px;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  a {
+    text-decoration: none;
+  }
+  section,
+  li,
+  article {
+    break-inside: avoid;
   }
 }

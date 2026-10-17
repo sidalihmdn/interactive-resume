@@ -1,11 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  // Must match BASE_PATH in lib/site.ts.
   basePath: '/interactive-resume',
   assetPrefix: '/interactive-resume/',
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
     unoptimized: true,
   },

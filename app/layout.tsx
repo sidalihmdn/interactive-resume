@@ -1,66 +1,65 @@
-import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import { LanguageProvider } from '@/lib/context/LanguageContext'
-import VisitorCounter from '@/components/VisitorCounter'
-import { LanguageSwitcher } from '@/components/LanguageSwitcher'
-import './globals.css'
-import Script from 'next/script'
+import type { Metadata, Viewport } from "next"
+import { Geist, Geist_Mono } from "next/font/google"
+import Script from "next/script"
+import { ThemeProvider } from "@/components/theme-provider"
+import { LanguageProvider } from "@/lib/context/LanguageContext"
+import { en } from "@/lib/content/en"
+import { asset, SITE_URL } from "@/lib/site"
+import "./globals.css"
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" })
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 
 export const metadata: Metadata = {
-  title: 'Sid-Ali HAMDANE - Software Test Engineer',
-  description: 'Personal resume and portfolio showcasing my work and experience',
-  generator: 'ME',
+  metadataBase: new URL(SITE_URL),
+  title: en.meta.title,
+  description: en.meta.description,
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    type: "profile",
+    url: SITE_URL,
+    title: en.meta.title,
+    description: en.meta.description,
+    images: [{ url: asset("/S-512.png"), width: 512, height: 512 }],
+  },
   icons: {
     icon: [
-     {
-      url: '/interactive-resume/S-48.png',
-      sizes: '48x48',
-      type: 'image/png',
-     },
-     {
-      url: '/interactive-resume/S-32.png',
-      sizes: '32x32',
-      type: 'image/png',
-     },
-     {
-      url: '/interactive-resume/S-120.png',
-      sizes: '120x120',
-      type: 'image/png',
-     },
+      { url: asset("/S-32.png"), sizes: "32x32", type: "image/png" },
+      { url: asset("/S-48.png"), sizes: "48x48", type: "image/png" },
+      { url: asset("/S-120.png"), sizes: "120x120", type: "image/png" },
     ],
-    apple: '/interactive-resume/lohS-180.png',
+    apple: asset("/S-180.png"),
   },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f7f8" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f161c" },
+  ],
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    // next-themes and the language detection both change <html> attributes on the client.
+    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="font-sans antialiased">
-        <VisitorCounter></VisitorCounter>
-        <LanguageProvider>
-          <LanguageSwitcher />
-          {children}
-          <script data-goatcounter="https://berkukes.goatcounter.com/count"
-                  async src="//gc.zgo.at/count.js"></script>
-        </LanguageProvider>
-        <Script
-          id="schema-person"
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <LanguageProvider>{children}</LanguageProvider>
+        </ThemeProvider>
+        <Script data-goatcounter="https://berkukes.goatcounter.com/count" src="//gc.zgo.at/count.js" strategy="afterInteractive" />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Sid-Ali HAMDANE",
-              url: "https://sidalihmdn.github.io/interactive-resume/",
-              image: "https://sidalihmdn.github.io/interactive-resume/S-48.png",
+              name: "Sid-Ali Hamdane",
+              url: SITE_URL,
+              image: new URL("S-512.png", SITE_URL).toString(),
               jobTitle: "Software Test Engineer",
+              worksFor: { "@type": "Organization", name: "Rakuten France" },
+              sameAs: ["https://github.com/sidalihmdn", "https://www.linkedin.com/in/sidali-hamdane"],
             }),
           }}
         />
